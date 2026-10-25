@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Миша — Unity-разработчик, портфолио</title>
+<meta name="description" content="Портфолио Unity-разработчика: хоррор Kill Them (PS1-стиль, ПК) и игры, выпущенные на Яндекс Играх. Можно поиграть прямо на странице.">
+<meta property="og:title" content="Миша — Unity-разработчик">
+<meta property="og:description" content="Kill Them (ПК, PS1-хоррор) и игры на Яндекс Играх. Играть можно сразу.">
+<meta property="og:image" content="assets/kt/title.jpg">
+<style>
+:root{--bg:#0b0d0c;--panel:#141815;--line:#242a25;--text:#e7ece8;--mute:#9aa59d;--acc:#c8352b;--acc2:#8fb339}
+@media (prefers-color-scheme:light){:root{--bg:#f4f5f2;--panel:#fff;--line:#dfe3dc;--text:#151a16;--mute:#5d685f}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+header.top b{letter-spacing:.02em}
+nav a{margin-left:18px;text-decoration:none;color:var(--mute);font-size:14px}
+nav a:hover{color:var(--text)}
+.hero{padding:64px 0 40px;display:grid;gap:28px}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.08;margin:0;letter-spacing:-.02em}
+.hero h1 span{color:var(--acc)}
+.hero p{max-width:640px;color:var(--mute);font-size:18px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--mute)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-weight:600;cursor:pointer;background:var(--panel);color:var(--text);font-size:15px}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:hover{filter:brightness(1.12)}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.kt{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+.kt .shot{background:#000}
+.kt .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.kt .body{padding:26px}
+.kt h3{margin:0 0 8px;font-size:24px}
+.kt ul{padding-left:18px;color:var(--mute);margin:12px 0}
+.kt li{margin:4px 0}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:20px}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;display:block;background:#000}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.fact{padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.fact b{display:block;margin-bottom:4px}
+.fact span{color:var(--mute);font-size:14px}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.game .cover{aspect-ratio:16/9;background:#000 center/cover;position:relative}
+.game .cover .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45)}
+.game .info{padding:18px}
+.game h3{margin:0 0 6px}
+.game p{color:var(--mute);margin:6px 0 14px;font-size:15px}
+.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--line);color:var(--mute);margin-right:6px}
+.badge.age{background:var(--acc);color:#fff}
+#player{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.92);display:none;flex-direction:column}
+#player.on{display:flex}
+#player .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;color:#fff}
+#player iframe{flex:1;border:0;width:100%;background:#000}
+#player button{background:#222;color:#fff;border:1px solid #444;border-radius:8px;padding:8px 14px;cursor:pointer}
+#lb{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:92vh}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.contact a{color:var(--acc2)}
+footer{padding:36px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){.kt{grid-template-columns:1fr}nav a{margin-left:12px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><b>Миша · Unity</b>
+<nav><a href="#kill-them">Kill Them</a><a href="#games">Игры</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+  <div class="chips"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">URP / шейдеры</span><span class="chip">WebGL</span><span class="chip">Яндекс Игры SDK</span></div>
+  <h1>Делаю игры на Unity.<br><span>От идеи до релиза.</span></h1>
+  <p>Выпускал игры на Яндекс Играх с рекламой и внутриигровыми покупками, а сейчас делаю свой хоррор Kill Them для ПК. Ниже всё можно открыть и поиграть.</p>
+  <div class="btns"><a class="btn primary" href="#kill-them">Kill Them для ПК</a><a class="btn" href="#games">Играть в браузере</a></div>
+</div>
+
+<section id="kill-them">
+  <h2>Kill Them</h2>
+  <p class="sub">Хоррор от первого лица в эстетике PlayStation 1. Сборка для Windows.</p>
+  <div class="card kt">
+    <div class="shot"><img src="assets/kt/corridor.jpg" alt="Kill Them: коридор школы" loading="lazy"></div>
+    <div class="body">
+      <h3>Убей их всех</h3>
+      <p>Герой приходит в себя в пустом классе. За окном темно, на двери доски, а школа уже не та, что была. Нужно найти ключи, выжить и выбраться.</p>
+      <ul>
+        <li>Свой PSX-рендер: пост-эффект 240p, дизеринг, «скачущие» пиксели, дрожание вершин, аффинные текстуры</li>
+        <li>Сюжетный проход: пролог, свободное исследование основного крыла, босс, финал на крыше</li>
+        <li>Враги, оружие ближнего боя, здоровье с «шрамами», фонарик и телефон, мигающий свет</li>
+        <li>Сценарий, уровень, скрипты и настройка графики мои</li>
+      </ul>
+      <div class="btns"><a class="btn primary" href="downloads/KillThem-Windows.zip" download>Скачать для Windows (zip)</a></div>
+      <p class="sub" style="margin:10px 0 0;font-size:13px">Распаковать и запустить KillThem.exe. Демо-версия, игра в разработке.</p>
+    </div>
+  </div>
+  <div class="gallery" id="gallery">
+    <img src="assets/kt/title.jpg" alt="Заставка Kill Them" loading="lazy">
+    <img src="assets/kt/locker.jpg" alt="Раздевалка" loading="lazy">
+    <img src="assets/kt/mirror.jpg" alt="Зеркало в коридоре" loading="lazy">
+    <img src="assets/kt/boss.jpg" alt="Спортзал" loading="lazy">
+    <img src="assets/kt/jacket.jpg" alt="Куртка охранника" loading="lazy">
+    <img src="assets/kt/bathroom.jpg" alt="Туалет" loading="lazy">
+    <img src="assets/kt/class.jpg" alt="Класс" loading="lazy">
+    <img src="assets/kt/blood.jpg" alt="Эффект урона" loading="lazy">
+  </div>
+  <div class="facts">
+    <div class="fact"><b>Движок</b><span>Unity 2022.3, Universal Render Pipeline, C#</span></div>
+    <div class="fact"><b>Графика</b><span>Собственные шейдеры и render feature для PS1-картинки</span></div>
+    <div class="fact"><b>Атмосфера</b><span>Свет, туман, звук, процедурные текстуры стен и пола</span></div>
+    <div class="fact"><b>Процесс</b><span>Git, задачи по плану, тесты на каждом шаге</span></div>
+  </div>
+</section>
+
+<section id="games">
+  <h2>Игры на Яндекс Играх</h2>
+  <p class="sub">Выпускал сам: Unity → WebGL, Yandex Games SDK, реклама и покупки, метрика. Нажми «Играть», игра откроется на странице.</p>
+  <div class="games" id="gamelist"></div>
+</section>
+
+<section id="about">
+  <h2>Обо мне</h2>
+  <p class="sub">Мне 19, живу в Москве. Делаю игры на Unity с нуля: код, интерфейс, графика, сборка и публикация.</p>
+  <div class="facts">
+    <div class="fact"><b>Публикация</b><span>Прошёл модерацию Яндекс Игр, подключал SDK, рекламу, покупки и Яндекс Метрику</span></div>
+    <div class="fact"><b>Анализ рынка</b><span>Выбираю, что делать, глядя на то, что востребовано на площадке</span></div>
+    <div class="fact"><b>Свой проект</b><span>Kill Them: полноценный сюжетный хоррор, который я довожу до релиза</span></div>
+    <div class="fact"><b>Стек</b><span>Unity, C#, URP, Shader/HLSL, WebGL, Git, Python для инструментов</span></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Контакты</h2>
+  <p class="sub">Ищу работу или стажировку в геймдеве (Unity). Открыт к заказам на мини-игры.</p>
+  <div class="btns">
+    <a class="btn" href="https://github.com/migasextone-del" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="mailto:miga.sextone@gmail.com">miga.sextone@gmail.com</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Миша · Unity-разработчик</div></footer>
+
+<div id="player"><div class="bar"><span id="ptitle"></span><button id="pclose">Закрыть ×</button></div><iframe id="pframe" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe></div>
+<div id="lb"><img alt=""></div>
+
+<script>
+const GAMES=[
+  {slug:"anime-clicker",title:"Аниме-кликер",age:"18+",cover:"games/anime-clicker/cover.jpg",
+   desc:"Кликер про аниме-девушек в купальниках. Прокачка, награды, реклама и внутриигровые покупки. Сделан под то, что востребовано на Яндекс Играх, и стал моим самым удачным проектом на площадке.",
+   tags:["Unity WebGL","Яндекс Игры","Реклама","Покупки"]},
+  {slug:"omega-nuggets",title:"Омега Наггетс",age:"",cover:"games/omega-nuggets/cover.jpg",
+   desc:"Головоломка в духе 2048: соединяй одинаковые шары и проходи уровни. Мемный стиль, портретная ориентация для телефона, сохранения и меню настроек. Первый мой проект на Яндекс Играх.",
+   tags:["Unity WebGL","Яндекс Игры","Мобильные"]}
+];
+const list=document.getElementById('gamelist');
+GAMES.forEach(g=>{
+  const el=document.createElement('div');el.className='card game';
+  el.innerHTML=`<div class="cover" style="background-image:url('${g.cover}')"></div>
+  <div class="info"><h3>${g.title}</h3>
+  <div>${g.age?`<span class="badge age">${g.age}</span>`:''}${g.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+  <p>${g.desc}</p><button class="btn primary">Играть</button></div>`;
+  el.querySelector('button').onclick=()=>{
+    if(g.age&&!confirm('Игра для взрослых ('+g.age+'). Тебе есть 18?'))return;
+    document.getElementById('ptitle').textContent=g.title;
+    document.getElementById('pframe').src='games/'+g.slug+'/index.html';
+    document.getElementById('player').classList.add('on');
+  };
+  list.appendChild(el);
+});
+document.getElementById('pclose').onclick=()=>{document.getElementById('player').classList.remove('on');document.getElementById('pframe').src='about:blank'};
+const lb=document.getElementById('lb');
+document.querySelectorAll('#gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');
+</script>
+</body>
+</html>
